@@ -1,0 +1,48 @@
+html {
+  	box-sizing: border-box;
+}
+*, *:before, *:after {
+ 	box-sizing: inherit;
+}
+body {
+	background-color: #FFFFFF;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
+	background-size: 45%;
+	background-attachment: fixed;
+}
+.title p {
+	color: #E30922;
+	text-shadow: 2px 2px #fcd920;
+	font-family: 'Roboto Slab', serif;
+	font-size: 3em;
+	margin-bottom: 0;
+	margin-top: 1em;
+}
+.quote {
+	color: #E30922;
+	text-shadow: 2px 2px #fcd920;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+.questions {
+	height: 4em;
+	width: 40em;
+	margin: 3em auto;
+	border-radius: 10px;
+	background-color: #E30922;
+	opacity: 0.9;
+}
+.answer-1, .answer-2, .answer-3, .answer-4 {
+	height: 4em;
+	width: 30em;
+	margin: 2em auto;
+	border-radius: 10px;
+	background-color: #E30922;
+	opacity: 0.9;
+}
+.submit {
+
+}
