@@ -6,7 +6,6 @@ html {
 }
 body {
 	background-color: #FFFFFF;
-	text-align: center;
 	background-repeat: no-repeat;
 	background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
 	background-size: 45%;
@@ -16,9 +15,10 @@ body {
 	color: #E30922;
 	text-shadow: 2px 2px #fcd920;
 	font-family: 'Roboto Slab', serif;
-	font-size: 3em;
+	font-size: 4em;
 	margin-bottom: 0;
 	margin-top: 1em;
+	text-align: center;
 }
 .quote {
 	color: #E30922;
@@ -26,14 +26,24 @@ body {
 	font-family: 'Roboto Slab', serif;
 	font-size: 1.5em;
 	margin: 0 auto;
+	text-align: center;
 }
-.questions {
-	height: 4em;
-	width: 40em;
+.question-1 {
+	height: 5em;
+	width: 35em;
 	margin: 3em auto;
 	border-radius: 10px;
 	background-color: #E30922;
 	opacity: 0.9;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	padding: 10px 0;
+}
+.question-1 p, .question-1 h2 {
+	margin: 0 auto;
+}
+.question-1 p {
+	font-size: 1.25em;
 }
 .answer-1, .answer-2, .answer-3, .answer-4 {
 	height: 4em;
@@ -42,6 +52,13 @@ body {
 	border-radius: 10px;
 	background-color: #E30922;
 	opacity: 0.9;
+	font-family: 'Roboto Slab', serif;
+	font-size: 1em;
+	text-align: left;
+	padding: 20px 0;
+}
+input {
+	margin: 0 2em;
 }
 .submit {
 
