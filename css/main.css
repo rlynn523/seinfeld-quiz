@@ -53,10 +53,9 @@ body {
 	border-radius: 10px;
 	background-color: #E30922;
 	opacity: 0.9;
-	font-family: 'Roboto Slab', serif;
 	font-size: 1em;
 	text-align: left;
-	padding: 20px 0;
+	padding: 18px 0;
 	border-color: #000000;
 	border-style: solid;
 }
@@ -72,6 +71,18 @@ input {
 	text-align: center;
 	border-radius: 10px;
 	padding: 10px 0;
+	border-color: #E30922;
+	border-style: solid;
+}
+.game-over {
+	width: 33%;
+	font-size: 1.25em;
+	padding: 50px;
+	border-radius: 10px;
+	opacity: 0.9;
+	background-color: #fcd920;
+	margin: 2em auto;
+	text-align: center;
 	border-color: #E30922;
 	border-style: solid;
 }
