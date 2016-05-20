@@ -9,8 +9,16 @@ $(document).ready(function() {
 		correctAnswer: quiz.correct[0],
 		wrongOne: quiz.wrong[0],
 		wrongTwo: quiz.wrong[1],
-		wrongThree: quiz.wrong[2]
+		wrongThree: quiz.wrong[2],
 	}
+	// function changeQuestion() {
+	// 	$(".question-title p").text(questionOne.question);
+	// 	$(".answer-1").text(questionOne.wrongOne);
+	// 	$(".answer-2").text(questionOne.wrongTwo);
+	// 	$(".answer-3").text(questionOne.correctAnswer);
+	// 	$(".answer-4").text(questionOne.wrongThree);
+	// }
+
 	var questionTwo = {
 		question: quiz.questions[1],
 		correctAnswer: quiz.correct[1],
@@ -18,7 +26,6 @@ $(document).ready(function() {
 		wrongTwo: quiz.wrong[4],
 		wrongThree: quiz.wrong[5]
 	}
-	console.log(questionTwo);
 	var questionThree = {
 		question: quiz.questions[2],
 		correctAnswer: quiz.correct[2],
@@ -26,7 +33,6 @@ $(document).ready(function() {
 		wrongTwo: quiz.wrong[7],
 		wrongThree: quiz.wrong[8]
 	}
-	console.log(questionThree);
 	var questionFour = {
 		question: quiz.questions[3],
 		correctAnswer: quiz.correct[3],
@@ -34,32 +40,28 @@ $(document).ready(function() {
 		wrongTwo: quiz.wrong[10],
 		wrongThree: quiz.wrong[11]
 	}
-	console.log(questionFour);
 	var questionFive = {
 		question: quiz.questions[4],
 		correctAnswer: quiz.correct[4],
 		wrongOne: quiz.wrong[12],
 		wrongTwo: quiz.wrong[13],
 		wrongThree: quiz.wrong[14]
-	} 
-	console.log(questionFive);
+	}
 
-	// function changeQuestion() {
-	// $(".question-title p").text(quiz.questions[0]);
-	// }
+	var questionObjects = [questionOne, questionTwo, questionThree, questionFour, questionFive]
+	console.log(questionObjects[0]);
+
+	$("input[type='radio'].radioOne").click(function(){
+		alert("yay");
+	})
+
 	// var i = 1
 	// function questionCounter() {
 	// 	$(".counter").text(++i);
 	// }
 	// changeQuestion();
 
-	function changeQuestion() {
-	$(".question-title p").text(quiz.questions[0]);
-	}
-
 	$(".submit").click(function(){
 		alert("submit");
 	})
-	changeQuestion();
-	
 });
