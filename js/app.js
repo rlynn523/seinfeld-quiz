@@ -76,13 +76,19 @@ $(document).ready(function() {
 	}
 
 	var questionObjects = [questionOne, questionTwo, questionThree, questionFour, questionFive]
-
-	// var i = 1
-	// function questionCounter() {
-	// 	$(".counter").text(++i);
-	// }
-
-	$(".submit").click(function(){
-		alert("submit");
+	
+	$(".submit").click(function() {
+		questionTwo.changeQuestion();
+		questionCounter();
+		console.log("submit");
 	})
+	$(".submit").click(function() {
+		questionThree.changeQuestion();
+		questionCounter();
+	});	
+
+	var i = 1
+	function questionCounter() {
+		$(".counter").text(++i);
+	}
 });
