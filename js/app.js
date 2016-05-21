@@ -1,69 +1,80 @@
 $(document).ready(function() {
 	var quiz = [
-		questionOne = {
+		{
 			question: "What is the name of the gang's coffee shop hangout?",
-			correctAnswer: "Monk's",
-			wrongAnswers: ["Mendy's", "Reggie's", "Dream Cafe"]
+			answers: ["Mendy\'s", "Reggie\'s", "Dream Cafe", "Monk\'s"]
 		},
-		questionTwo = {
+		{
 			question: "What is Kramer's real name?",
-			correctAnswer: "Cosmo",
-			wrongAnswers: ["Carl", "John", "Jerry"]
+			answers: ["Carl", "John", "Cosmo", "Jerry"]
 		},
-		questionThree = {
+		{
 			question: "What is Jerry's apartment number?",
-			correctAnswer: "5A",
-			wrongAnswers: ["5B", "5C", "5D"]
+			answers: ["5A","5B", "5C", "5D"]
 		},
-		questionFour = {
+		{
 			question: "What occupation does George like to pretend he has?",
-			correctAnswer: "Architect",
-			wrongAnswers: ["Marine Biologist", "Latex Salesman", "Hand Model"]
+			answers: ["Marine Biologist", "Latex Salesman", "Architect", "Hand Model"]
 		},
-		questionFive = {
+		{
 			question:  "What was Kramer's fake doctor name?",
-			correctAnswer: "Dr. Van Nostrand",
-			wrongAnswers: ["Dr. Vandelay", "Dr. Whatley", "Dr. Reston"]
-		}
+			answers: [" 'Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"]
+		},
 	]
 
 	// Change Question 
 	function changeQuestion(quiz){
 		$(".question-title p").text(quiz);
-		console.log("change");
-		}
-	
+	}
+
+	// Change Answer
 	function changeAnswers(quiz) {
-		$(".answer-1").html("<input type='radio' name='answer' class='radioOne'/>" + quiz.wrongAnswers[0]);
-		$(".answer-2").html("<input type='radio' name='answer' class='radioTwo'/>" + quiz.wrongAnswers[1]);
-		$(".answer-3").html("<input type='radio' name='answer' class='radioThree'/>" + quiz.wrongAnswers[2]);
-		$(".answer-4").html("<input type='radio' name='answer' class='radioFour'/>" + quiz.correctAnswer);
-		console.log("questionOne");
+	// To Do ask Martin about string concat misc
+		$(".answer-1").html("<input type='radio' name='answer' value="+quiz.answers[0]+">" + quiz.answers[0]);
+		$(".answer-2").html("<input type='radio' name='answer' value="+quiz.answers[1]+">" + quiz.answers[1]);
+		$(".answer-3").html("<input type='radio' name='answer' value="+quiz.answers[2]+">" + quiz.answers[2]);
+		$(".answer-4").html("<input type='radio' name='answer' value="+quiz.answers[3]+">" + quiz.answers[3]);
 	}
-	function questionAnswerOne() {
-		changeQuestion(quiz[0].question);
-		changeAnswers(questionOne);
+
+	//Question and Answer Functions
+	function questionAnswer(i) {
+		var question = quiz[i];
+		changeQuestion(question.question);
+		changeAnswers(question);
 	}
-	function questionAnswerTwo() {
-		changeQuestion(quiz[1].question);
-		changeAnswers(questionTwo);
+	
+	function validateAnswer(){
+		var input = $("input[name='answer']:checked").val();
+		if(input === quiz[0].answers[3]) {
+			console.log(input)
+		} else if (input === quiz[1].answers[2]) {
+			alert("correct!");
+			console.log(input);
+		} else if (input === quiz[2].answers[0]) {
+			alert("correct!");
+			console.log(input);
+		} else if (input === quiz[3].answers[2]) {
+			alert("correct!");
+			console.log(input);
+		} else if (input === quiz[4].answers[1]) {
+			alert("correct!");
+			console.log(input);
+		} else {
+			alert("wrong!");
+			console.log(input);
+		}
 	}
-	function questionAnswerThree(){
-		changeQuestion(quiz[2].question);
-		changeAnswers(questionThree);
+	$("form").submit(function(e){
+		e.preventDefault();
+		validateAnswer();
+		questionAnswer(i);
+		questionCounter();
+	})
+
+	var i = 1
+	function questionCounter() {
+		$(".counter").text(++i);
+		console.log("counter");
 	}
-	function questionAnswerFour() {
-		changeQuestion(quiz[3].question);
-		changeAnswers(questionFour);
-	}
-	function questionAnswerFive() {
-		changeQuestion(quiz[4].question);
-		changeAnswers(questionFive);
-	}
-	questionAnswerFive();
-	// var i = 1
-	// function questionCounter() {
-	// 	$(".counter").text(++i);
-	// }
-	// changeAnswersOne();
+	questionAnswer(0);
 });
