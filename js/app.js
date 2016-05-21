@@ -48,18 +48,23 @@ $(document).ready(function() {
 		if(input === quiz[0].answers[3]) {
 			alert("correct!");
 			console.log(input)
+			finalScore();
 		} else if (input === quiz[1].answers[2]) {
 			alert("correct!");
 			console.log(input);
+			finalScore();
 		} else if (input === quiz[2].answers[0]) {
 			alert("correct!");
 			console.log(input);
+			finalScore();
 		} else if (input === quiz[3].answers[2]) {
 			alert("correct!");
 			console.log(input);
+			finalScore();
 		} else if (input === quiz[4].answers[1]) {
 			alert("correct!");
 			console.log(input);
+			finalScore();
 		} else {
 			alert("wrong!");
 			console.log(input);
@@ -71,6 +76,12 @@ $(document).ready(function() {
 		questionAnswer(i);
 		questionCounter();
 	})
+	
+	var score = 0
+	function finalScore() {
+		score += 1;
+		console.log(score);
+	}
 
 	var i = 1
 	function questionCounter() {
