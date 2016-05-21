@@ -18,7 +18,7 @@ $(document).ready(function() {
 		},
 		{
 			question:  "What was Kramer's fake doctor name?",
-			answers: [" 'Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"]
+			answers: ["Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"]
 		},
 	]
 
@@ -46,6 +46,7 @@ $(document).ready(function() {
 	function validateAnswer(){
 		var input = $("input[name='answer']:checked").val();
 		if(input === quiz[0].answers[3]) {
+			alert("correct!");
 			console.log(input)
 		} else if (input === quiz[1].answers[2]) {
 			alert("correct!");
