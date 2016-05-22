@@ -1,44 +1,44 @@
 $(document).ready(function() {
-	var correct = ["Monk\'s", "Cosmo", "5A", "Architect", "Dr. Van Nostrand"]
-	var quiz = [
-		{
-			question: "What is the name of the gang's coffee shop hangout?",
-			answers: ["Mendy\'s", "Reggie\'s", "Dream Cafe", correct [0]],
-			correct: correct[0],
-		},
-		{
-			question: "What is Kramer's real name?",
-			answers: ["Carl", "John", correct[1], "Jerry"],
-			correct: correct[1],
-		},
-		{
-			question: "What is Jerry's apartment number?",
-			answers: [correct[2],"5B", "5C", "5D"],
-			correct: correct[2],
-		},
-		{
-			question: "What occupation does George like to pretend he has?",
-			answers: ["Marine Biologist", "Latex Salesman", correct[3], "Hand Model"],
-			correct: correct[3],
-		},	
-		{
-			question:  "What was Kramer's fake doctor name?",
-			answers: ["Dr. Vandelay", correct[4], "Dr. Whatley", "Dr. Reston"],
-			correct: correct[4],
-		},
-	]
+	var quiz = {
+		questions: [
+			{
+				title: "What is the name of the gang's coffee shop hangout?",
+				answers: ["Mendy\'s", "Reggie\'s", "Dream Cafe", "Monk\'s"],
+				correct: 3
+			},
+			{
+				title: "What is Kramer's real name?",
+				answers: ["Carl", "John", "Cosmo", "Jerry"],
+				correct: 2
+			},
+			{
+				title: "What is Jerry's apartment number?",
+				answers: ["5A","5B", "5C", "5D"],
+				correct: 0
+			},
+			{
+				title: "What occupation does George like to pretend he has?",
+				answers: ["Marine Biologist", "Latex Salesman", "Architect", "Hand Model"],
+				correct: 2
+			},	
+			{
+				title:  "What was Kramer's fake doctor name?",
+				answers: ["Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"],
+				correct: 2
+			}
+		]
+	}
 	// Change Question 
 	function changeQuestion(quiz){
 		$(".question-title p").text(quiz);
 	}
 
 	// Change Answer
-	function changeAnswers(quiz) {
-	// To Do ask Martin about string concat misc
-		$(".answer-1").html("<input type='radio' name='answer' value="+quiz.answers[0]+">" + quiz.answers[0]);
-		$(".answer-2").html("<input type='radio' name='answer' value="+quiz.answers[1]+">" + quiz.answers[1]);
-		$(".answer-3").html("<input type='radio' name='answer' value="+quiz.answers[2]+">" + quiz.answers[2]);
-		$(".answer-4").html("<input type='radio' name='answer' value="+quiz.answers[3]+">" + quiz.answers[3]);
+	function changeAnswers(question) {
+		for (var i = 0; i < question.answers.length; i++) {
+			$(".quiz-form").append('<div class="answer"><input type="radio" name="answer" value="'+question.answers[i]+'">' + question.answers[i] + '</div>');
+		}
+		$(".quiz-form").append('<div class="submit"><button type="text">Submit</button></div>');
 	}
 
 	function userAnswer() {
@@ -47,7 +47,9 @@ $(document).ready(function() {
 			if (input === quiz[i].correct) {
 				console.log("correct");
 				finalScore();
-			} 
+			} else {
+				console.log("wrong");
+			}
 		}
 	}
 	function displayResults() {
@@ -55,8 +57,8 @@ $(document).ready(function() {
 	}
 	//Question and Answer Functions
 	function questionAnswer(i) {
-		var question = quiz[i];
-		changeQuestion(question.question);
+		var question = quiz.questions[i];
+		changeQuestion(question.title);
 		changeAnswers(question);
 	}
 
@@ -72,34 +74,34 @@ $(document).ready(function() {
 	}
 	
 	$("form").submit(function(e){
-		userAnswer();
+		e.preventDefault();
+		validateAnswer();
 		questionAnswer(i);
 		questionCounter();
 		displayResults();
-		e.preventDefault();
 	})
 
 	questionAnswer(0);
 
-	// function validateAnswer(){
-	// 	var input = $("input[name='answer']:checked").val();
-	// 	if(input === quiz[0].correct) {
-	// 		console.log("correct")
-	// 		finalScore();
-	// 	} else if (input === quiz[1].correct) {
-	// 		console.log("correct");
-	// 		finalScore();
-	// 	} else if (input === quiz[2].correct) {
-	// 		console.log("correct");
-	// 		finalScore();
-	// 	} else if (input === quiz[3].correct) {
-	// 		console.log("correct");
-	// 		finalScore();
-	// 	} else if (input == quiz[4].correct) {
-	// 		console.log("correct");
-	// 		finalScore();
-	// 	} else {
-	// 		console.log("wrong");
-	// 	}
-	// }
+	function validateAnswer(){
+		var input = $("input[name='answer']:checked").val();
+		if(input === quiz[0].correct) {
+			console.log("correct")
+			finalScore();
+		} else if (input === quiz[1].correct) {
+			console.log("correct");
+			finalScore();
+		} else if (input === quiz[2].correct) {
+			console.log("correct");
+			finalScore();
+		} else if (input === quiz[3].correct) {
+			console.log("correct");
+			finalScore();
+		} else if (input == quiz[4].correct) {
+			console.log("correct");
+			finalScore();
+		} else {
+			console.log("wrong");
+		}
+	}
 });
