@@ -1,27 +1,32 @@
 $(document).ready(function() {
+	var correct = ["Monk\'s", "Cosmo", "5A", "Architect", "Dr. Van Nostrand"]
 	var quiz = [
 		{
 			question: "What is the name of the gang's coffee shop hangout?",
-			answers: ["Mendy\'s", "Reggie\'s", "Dream Cafe", "Monk\'s"]
+			answers: ["Mendy\'s", "Reggie\'s", "Dream Cafe", correct [0]],
+			correct: correct[0],
 		},
 		{
 			question: "What is Kramer's real name?",
-			answers: ["Carl", "John", "Cosmo", "Jerry"]
+			answers: ["Carl", "John", correct[1], "Jerry"],
+			correct: correct[1],
 		},
 		{
 			question: "What is Jerry's apartment number?",
-			answers: ["5A","5B", "5C", "5D"]
+			answers: [correct[2],"5B", "5C", "5D"],
+			correct: correct[2],
 		},
 		{
 			question: "What occupation does George like to pretend he has?",
-			answers: ["Marine Biologist", "Latex Salesman", "Architect", "Hand Model"]
-		},
+			answers: ["Marine Biologist", "Latex Salesman", correct[3], "Hand Model"],
+			correct: correct[3],
+		},	
 		{
 			question:  "What was Kramer's fake doctor name?",
-			answers: ["Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"]
+			answers: ["Dr. Vandelay", correct[4], "Dr. Whatley", "Dr. Reston"],
+			correct: correct[4],
 		},
 	]
-
 	// Change Question 
 	function changeQuestion(quiz){
 		$(".question-title p").text(quiz);
@@ -36,47 +41,25 @@ $(document).ready(function() {
 		$(".answer-4").html("<input type='radio' name='answer' value="+quiz.answers[3]+">" + quiz.answers[3]);
 	}
 
+	function userAnswer() {
+		var input = $("input[name='answer']:checked").val();
+		for (var i = 0; i < quiz.length; i++){
+			if (input === quiz[i].correct) {
+				console.log("correct");
+				finalScore();
+			} 
+		}
+	}
+	function displayResults() {
+		console.log("You got" + " " + score + " " + "out of 5 correct!");
+	}
 	//Question and Answer Functions
 	function questionAnswer(i) {
 		var question = quiz[i];
 		changeQuestion(question.question);
 		changeAnswers(question);
 	}
-	
-	function validateAnswer(){
-		var input = $("input[name='answer']:checked").val();
-		if(input === quiz[0].answers[3]) {
-			alert("correct!");
-			console.log(input)
-			finalScore();
-		} else if (input === quiz[1].answers[2]) {
-			alert("correct!");
-			console.log(input);
-			finalScore();
-		} else if (input === quiz[2].answers[0]) {
-			alert("correct!");
-			console.log(input);
-			finalScore();
-		} else if (input === quiz[3].answers[2]) {
-			alert("correct!");
-			console.log(input);
-			finalScore();
-		} else if (input === quiz[4].answers[1]) {
-			alert("correct!");
-			console.log(input);
-			finalScore();
-		} else {
-			alert("wrong!");
-			console.log(input);
-		}
-	}
-	$("form").submit(function(e){
-		e.preventDefault();
-		validateAnswer();
-		questionAnswer(i);
-		questionCounter();
-	})
-	
+
 	var score = 0
 	function finalScore() {
 		score += 1;
@@ -86,7 +69,37 @@ $(document).ready(function() {
 	var i = 1
 	function questionCounter() {
 		$(".counter").text(++i);
-		console.log("counter");
 	}
+	
+	$("form").submit(function(e){
+		userAnswer();
+		questionAnswer(i);
+		questionCounter();
+		displayResults();
+		e.preventDefault();
+	})
+
 	questionAnswer(0);
+
+	// function validateAnswer(){
+	// 	var input = $("input[name='answer']:checked").val();
+	// 	if(input === quiz[0].correct) {
+	// 		console.log("correct")
+	// 		finalScore();
+	// 	} else if (input === quiz[1].correct) {
+	// 		console.log("correct");
+	// 		finalScore();
+	// 	} else if (input === quiz[2].correct) {
+	// 		console.log("correct");
+	// 		finalScore();
+	// 	} else if (input === quiz[3].correct) {
+	// 		console.log("correct");
+	// 		finalScore();
+	// 	} else if (input == quiz[4].correct) {
+	// 		console.log("correct");
+	// 		finalScore();
+	// 	} else {
+	// 		console.log("wrong");
+	// 	}
+	// }
 });
