@@ -28,7 +28,7 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
-.question-1 {
+.question-title {
 	height: 5em;
 	width: 35em;
 	margin: 3em auto;
@@ -40,13 +40,13 @@ body {
 	border-color: #000000;
 	border-style: solid;
 }
-.question-1 p, .question-1 h2 {
+.question-title p, .question-title h2 {
 	margin: 0 auto;
 }
-.question-1 p {
+.question-title p {
 	font-size: 1.25em;
 }
-.answer-1, .answer-2, .answer-3, .answer-4 {
+.answer {
 	height: 4em;
 	width: 30em;
 	margin: 2em auto;
@@ -62,7 +62,7 @@ body {
 input {
 	margin: 0 2em;
 }
-.submit {
+.submit, .new-game {
 	height: 3em;
 	width: 8em;
 	background-color: #fcd920;
@@ -70,9 +70,13 @@ input {
 	opacity: 0.9;
 	text-align: center;
 	border-radius: 10px;
-	padding: 10px 0;
+	padding-top: 8px;
 	border-color: #E30922;
 	border-style: solid;
+}
+.submit:hover, .new-game:hover {
+	cursor: pointer;
+	color: white;
 }
 .game-over {
 	width: 33%;

@@ -54,7 +54,6 @@ $(document).ready(function() {
 			if (quiz.questions[i].answers.indexOf(input) === quiz.questions[i].correct) {
 				finalScore();
 			} else {
-
 			}
 		}
 	}
@@ -65,16 +64,20 @@ $(document).ready(function() {
 		if (question !== undefined){
 			changeQuestion(question.title);
 			changeAnswers(question);
+			$(".new-game").hide();
+			$(".submit").show();
 		} else {
 			$(".question-title p").text("You got" + " " + score + " " + "out of 5 correct!" + " " + "Click New Game to play again!");
 			$(".question-title h2").hide();
+			$(".new-game").show();
+			$(".submit").hide();
 		}
 	}
 
 	// Tracking User's Correct Answers
 	var score = 0
 	function finalScore() {
-		score += 1;
+		++score;
 		console.log(score);
 	}
 
@@ -96,8 +99,9 @@ $(document).ready(function() {
 	function newGame(){
 		$(".question-title h2").show();
 		$(".counter").text(i = 1);
-		finalScore(score = 0)
 		questionAnswer(0);
+		score = 0;
+		console.log(score);
 	}
 
 	$(".question-answer").on("click", ".new-game", function(){
