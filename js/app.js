@@ -25,8 +25,8 @@ $(document).ready(function() {
 			{
 				title:  "What was Kramer's fake doctor name?",
 				answers: ["Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"],
-				correct: 2
-			}
+				correct: 1
+			},
 		]
 	}
 	//index is number, as is correct key
@@ -37,12 +37,13 @@ $(document).ready(function() {
 	// Change Answer
 	function changeAnswers(question) {
 		for (var i = 0; i < question.answers.length; i++) {
-			$(".quiz-form").append('<div class="answer"><input type="radio" name="answer" value="'+question.answers[i]+'">' + question.answers[i] + '</div>');
+			$(".answers").append('<div class="answer"><input type="radio" name="answer" value="'+question.answers[i]+'">' + question.answers[i] + '</div>');
 		}
-		$(".quiz-form").append('<div class="submit"><button type="text">Submit</button></div>');
-		return;
 	}
-	//if indexOf user input is equal to correct, then correct answer!
+	function submitButton(){
+		$(".quiz-form").append('<div class="submit"><button type="text">Submit</button></div>');
+	}
+
 	function userAnswer() {
 		var input = $("input[name='answer']:checked").val();
 		for (var i = 0; i < quiz.questions.length; i++){
@@ -55,17 +56,19 @@ $(document).ready(function() {
 			}
 		}
 	}
-	function displayResults() {
-		console.log("You got" + " " + score + " " + "out of 5 correct!");
-	}
 	//Question and Answer Functions
-
+	function newGame() {
+		questionAnswer(0);
+	}
 	function questionAnswer(i) {
 		var question = quiz.questions[i];
+		if (question !== undefined){
 		changeQuestion(question.title);
 		changeAnswers(question);
+		} else {
+			alert("You got" + " " + score + " " + "out of 5 correct!");
+		}
 	}
-
 	var score = 0
 	function finalScore() {
 		score += 1;
@@ -77,13 +80,12 @@ $(document).ready(function() {
 		$(".counter").text(++i);
 	}
 	
-	$("form").submit(function(e){
+	$("form").submit(function(e) {
 		e.preventDefault();
 		userAnswer();
-		$(".answer").replaceWith(questionAnswer(i));
+		$(".quiz-form .answer").replaceWith(questionAnswer(i));
 		questionCounter();
-		displayResults();
-
 	})
 	questionAnswer(0);
+	submitButton();
 });
