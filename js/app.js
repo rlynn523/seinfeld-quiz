@@ -100,7 +100,6 @@ $(document).ready(function() {
 		$(".counter").text(i = 1);
 		questionAnswer(0);
 		score = 0;
-		console.log(score);
 	}
 
 	$(".question-answer").on("click", ".new-game", function(){
