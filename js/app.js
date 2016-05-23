@@ -80,7 +80,7 @@ $(document).ready(function() {
 	$("form").submit(function(e){
 		e.preventDefault();
 		userAnswer();
-		questionAnswer(i);
+		$(".answer").replaceWith(questionAnswer(i));
 		questionCounter();
 		displayResults();
 
