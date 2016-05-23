@@ -78,7 +78,6 @@ $(document).ready(function() {
 	var score = 0
 	function finalScore() {
 		++score;
-		console.log(score);
 	}
 
 	// Question Counter
