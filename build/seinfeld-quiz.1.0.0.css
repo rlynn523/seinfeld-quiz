@@ -1,0 +1,171 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
+  background-size: 45%;
+  background-attachment: fixed;
+  font-family: 'Roboto Slab', serif;
+}
+.title p {
+  color: #E30922;
+  text-shadow: 2px 2px #fcd920;
+  font-family: 'Roboto Slab', serif;
+  font-size: 4em;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  text-align: center;
+}
+.quote {
+  color: #E30922;
+  text-shadow: 2px 2px #fcd920;
+  font-size: 1.5em;
+  margin: 0 auto;
+  text-align: center;
+}
+.question-title {
+  height: 5em;
+  width: 35em;
+  margin: 3em auto;
+  border-radius: 10px;
+  background-color: #E30922;
+  opacity: 0.9;
+  text-align: center;
+  padding: 10px 0;
+  border-color: #000000;
+  border-style: solid;
+}
+.question-title p,
+.question-title h2 {
+  margin: 0 auto;
+}
+.question-title p {
+  font-size: 1.25em;
+}
+.answer {
+  height: 4em;
+  width: 30em;
+  margin: 2em auto;
+  border-radius: 10px;
+  background-color: #E30922;
+  opacity: 0.9;
+  font-size: 1em;
+  text-align: left;
+  padding: 18px 0;
+  border-color: #000000;
+  border-style: solid;
+}
+input {
+  margin: 0 2em;
+}
+.submit,
+.new-game {
+  height: 3em;
+  width: 8em;
+  background-color: #fcd920;
+  margin: 0 auto;
+  opacity: 0.9;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 8px;
+  border-color: #E30922;
+  border-style: solid;
+}
+.submit:hover,
+.new-game:hover {
+  cursor: pointer;
+  color: white;
+}
+.game-over {
+  width: 33%;
+  font-size: 1.25em;
+  padding: 50px;
+  border-radius: 10px;
+  opacity: 0.9;
+  background-color: #fcd920;
+  margin: 2em auto;
+  text-align: center;
+  border-color: #E30922;
+  border-style: solid;
+}
+/* Media Queries */
+@media only screen and (max-width: 1240px) {
+  .question-title {
+    height: 5em;
+    width: 30em;
+  }
+  .question-title p,
+  .answer {
+    font-size: 15px;
+  }
+  .quote,
+  .question-title h2 {
+    font-size: 1.25em;
+  }
+  .title p {
+    font-size: 3.5em;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .question-title {
+    height: 4em;
+    width: 25em;
+  }
+  .answer {
+    height: 4em;
+    width: 20em ;
+  }
+  .question-title p {
+    font-size: 15px;
+  }
+  .quote,
+  .question-title h2 {
+    font-size: 1em;
+  }
+  .title p {
+    font-size: 2.5em;
+  }
+  .submit,
+  .new-game {
+    height: 3em;
+    width: 7em;
+  }
+  button[type=text] {
+    height: 2em;
+    width: 5em;
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 870px) {
+  .question-title {
+    height: 4em;
+    width: 20em;
+  }
+  .question-title p,
+  .answer {
+    font-size: 12px;
+  }
+  .quote,
+  .question-title h2 {
+    font-size: 15px;
+  }
+  .answer {
+    width: 20em;
+  }
+  .title p {
+    font-size: 2.5em;
+  }
+}
+@media only screen and (max-width: 640px) {
+  body {
+    background-image: none;
+  }
+}
+/*# sourceMappingURL=seinfeld-quiz.1.0.0.css.map */

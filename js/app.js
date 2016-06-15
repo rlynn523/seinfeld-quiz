@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var input = $("input[name='answer']:checked").val();
+
 	var quiz = {
 		questions: [
 			{
@@ -28,9 +29,10 @@ $(document).ready(function() {
 				correct: 1
 			},
 		]
-	}
+	};
 
 	// Change Question 
+	// View Method 
 	function changeQuestion(quiz){
 		$(".question-title p").text(quiz);
 	}
@@ -58,7 +60,8 @@ $(document).ready(function() {
 		}
 	}
 
-	//Question and Answer Functions
+	// Question and Answer Functions
+	// Controller?
 	function questionAnswer(i) {
 		var question = quiz.questions[i];
 		if (question !== undefined){
@@ -75,13 +78,14 @@ $(document).ready(function() {
 	}
 
 	// Tracking User's Correct Answers
-	var score = 0
+	var score = 0;
 	function finalScore() {
 		++score;
 	}
 
 	// Question Counter
-	var i = 1
+	// Controller?
+	var i = 1;
 	function questionCounter() {
 		$(".counter").text(++i);
 	}
@@ -92,7 +96,7 @@ $(document).ready(function() {
 		userAnswer();
 		$(".quiz-form .answer").replaceWith(questionAnswer(i));
 		questionCounter();
-	})
+	});
 
 	// New Game
 	function newGame(){
@@ -104,7 +108,7 @@ $(document).ready(function() {
 
 	$(".question-answer").on("click", ".new-game", function(){
 		newGame();
-	})
+	});
 
 	questionAnswer(0);
 	submitButton();
