@@ -4,7 +4,12 @@ html {
 *, *:before, *:after {
  	box-sizing: inherit;
 }
+
 @white: #FFFFFF;
+@black: #000000;
+@red: #E30922;
+@yellow: #FCD920;
+
 body {
     background-color: @white;
 	background-repeat: no-repeat;
@@ -14,8 +19,8 @@ body {
 	font-family: 'Roboto Slab', serif;
 }
 .title p {
-	color: #E30922;
-	text-shadow: 2px 2px #fcd920;
+	color: @red;
+	text-shadow: 2px 2px @yellow;
 	font-family: 'Roboto Slab', serif;
 	font-size: 4em;
 	margin-bottom: 0;
@@ -23,8 +28,8 @@ body {
 	text-align: center;
 }
 .quote {
-	color: #E30922;
-	text-shadow: 2px 2px #fcd920;
+	color: @red;
+	text-shadow: 2px 2px @yellow;
 	font-size: 1.5em;
 	margin: 0 auto;
 	text-align: center;
@@ -34,11 +39,11 @@ body {
 	width: 35em;
 	margin: 3em auto;
 	border-radius: 10px;
-	background-color: #E30922;
+	background-color: @red;
 	opacity: 0.9;
 	text-align: center;
 	padding: 10px 0;
-	border-color: #000000;
+	border-color: @black;
 	border-style: solid;
 }
 .question-title p, .question-title h2 {
@@ -52,12 +57,12 @@ body {
 	width: 30em;
 	margin: 2em auto;
 	border-radius: 10px;
-	background-color: #E30922;
+	background-color: @red;
 	opacity: 0.9;
 	font-size: 1em;
 	text-align: left;
 	padding: 18px 0;
-	border-color: #000000;
+	border-color: @black;
 	border-style: solid;
 }
 input {
@@ -66,13 +71,13 @@ input {
 .submit, .new-game {
 	height: 3em;
 	width: 8em;
-	background-color: #fcd920;
+	background-color: @yellow;
 	margin: 0 auto;
 	opacity: 0.9;
 	text-align: center;
 	border-radius: 10px;
 	padding-top: 8px;
-	border-color: #E30922;
+	border-color: @red;
 	border-style: solid;
 }
 .submit:hover, .new-game:hover {
@@ -85,10 +90,10 @@ input {
 	padding: 50px;
 	border-radius: 10px;
 	opacity: 0.9;
-	background-color: #fcd920;
+	background-color: @yellow;
 	margin: 2em auto;
 	text-align: center;
-	border-color: #E30922;
+	border-color: @red;
 	border-style: solid;
 }
 /* Media Queries */
