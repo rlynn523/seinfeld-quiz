@@ -30,6 +30,7 @@
     "less": "^2.7.1"
   },
   "devDependencies": {
-    "chokidar-cli": "^1.2.0"
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.7.1"
   }
 }
