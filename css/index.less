@@ -5,6 +5,7 @@ html {
  	box-sizing: inherit;
 }
 
+@roboto: 'Roboto Slab', serif;
 @white: #FFFFFF;
 @black: #000000;
 @red: #E30922;
@@ -16,12 +17,12 @@ body {
 	background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
 	background-size: 45%;
 	background-attachment: fixed;
-	font-family: 'Roboto Slab', serif;
+	font-family: @roboto;
 }
 .title p {
 	color: @red;
 	text-shadow: 2px 2px @yellow;
-	font-family: 'Roboto Slab', serif;
+	font-family: @roboto;
 	font-size: 4em;
 	margin-bottom: 0;
 	margin-top: 0.5em;
@@ -45,12 +46,13 @@ body {
 	padding: 10px 0;
 	border-color: @black;
 	border-style: solid;
-}
-.question-title p, .question-title h2 {
-	margin: 0 auto;
-}
-.question-title p {
-	font-size: 1.25em;
+	&p{
+		margin: 0 auto;
+		font-size: 1.25em;
+	}
+	&h2{
+		margin: 0 auto;
+	}
 }
 .answer {
 	height: 4em;
@@ -101,11 +103,17 @@ input {
 	.question-title {
 		height: 5em;
 		width: 30em;
+		&p {
+			font-size: 15px;
+		}
+		&h2 {
+			font-size: 1.25em;
+		}
 	}
-	.question-title p, .answer {
+	.answer {
 		font-size: 15px;
 	}	
-	.quote, .question-title h2 {
+	.quote {
 		font-size: 1.25em;
 	}
 	.title p {
@@ -116,15 +124,18 @@ input {
 	.question-title {
 		height: 4em;
 		width: 25em;
+		&p {
+			font-size: 15px;
+		}
+		&h2 {
+			font-size: 1em;
+		}
 	}
 	.answer {
 		height: 4em;
 		width: 20em ;
 	}
-	.question-title p {
-		font-size: 15px;
-	}	
-	.quote, .question-title h2 {
+	.quote {
 		font-size: 1em;
 	}
 	.title p {
@@ -144,15 +155,19 @@ input {
 	.question-title {
 		height: 4em;
 		width: 20em;
-	}
-	.question-title p, .answer{
-		font-size: 12px;
-	}	
-	.quote, .question-title h2 {
-		font-size: 15px;
+		&p {
+			font-size: 12px;
+		}
+		&h2 {
+			font-size: 15px;
+		}
 	}
 	.answer {
+		font-size: 12px;
 		width: 20em;
+	}	
+	.quote {
+		font-size: 15px;
 	}
 	.title p {
 		font-size: 2.5em;
