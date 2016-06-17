@@ -11,9 +11,15 @@
     "build:html": "npm run clean:html && cp index.html build/",
     "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
     "clean:html": "rm -f build/index.html",
-    "build:css": "npm run clean:css && lessc --source-map css/index.less build/$npm_package_name.$npm_package_version.css",
-    "watch:css": "npm run build:css && chokidar 'css/**/*.less' -c 'npm run build:css'",
-    "clean:css": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map"
+    "build:css": "npm run build:css:unminified && npm run build:css:minified",
+    "watch:css": "npm run watch:css:unminified & npm run watch:css:minified",
+    "clean:css": "npm run clean:css:unminified && npm run clean:css:minified",
+    "build:css:unminified": "npm run clean:css:unminified && lessc --source-map css/index.less build/$npm_package_name.$npm_package_version.css",
+    "watch:css:unminified": "npm run build:css:unminified && chokidar 'css/**/*.(css|less)' -c 'npm run build:css:unminified'",
+    "clean:css:unminified": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
+    "build:css:minified": "npm run clean:css:minified && lessc --clean-css --source-map css/index.less build/$npm_package_name.$npm_package_version.min.css",
+    "watch:css:minified": "npm run build:css:minified && chokidar 'css/**/*.(css|less)' -c 'npm run build:css:minified'",
+    "clean:css:minified": "rm -f build/$npm_package_name.$npm_package_version.min.css build/$npm_package_name.$npm_package_version.min.css.map"
   },
   "repository": {
     "type": "git",
@@ -31,6 +37,7 @@
   },
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
-    "less": "^2.7.1"
+    "less": "^2.7.1",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }

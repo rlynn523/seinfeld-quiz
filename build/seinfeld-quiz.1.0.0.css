@@ -16,7 +16,7 @@ body {
 }
 .title p {
   color: #E30922;
-  text-shadow: 2px 2px #fcd920;
+  text-shadow: 2px 2px #FCD920;
   font-family: 'Roboto Slab', serif;
   font-size: 4em;
   margin-bottom: 0;
@@ -25,7 +25,7 @@ body {
 }
 .quote {
   color: #E30922;
-  text-shadow: 2px 2px #fcd920;
+  text-shadow: 2px 2px #FCD920;
   font-size: 1.5em;
   margin: 0 auto;
   text-align: center;
@@ -42,12 +42,12 @@ body {
   border-color: #000000;
   border-style: solid;
 }
-.question-title p,
-.question-title h2 {
+.question-titlep {
   margin: 0 auto;
-}
-.question-title p {
   font-size: 1.25em;
+}
+.question-titleh2 {
+  margin: 0 auto;
 }
 .answer {
   height: 4em;
@@ -69,7 +69,7 @@ input {
 .new-game {
   height: 3em;
   width: 8em;
-  background-color: #fcd920;
+  background-color: #FCD920;
   margin: 0 auto;
   opacity: 0.9;
   text-align: center;
@@ -89,7 +89,7 @@ input {
   padding: 50px;
   border-radius: 10px;
   opacity: 0.9;
-  background-color: #fcd920;
+  background-color: #FCD920;
   margin: 2em auto;
   text-align: center;
   border-color: #E30922;
@@ -101,12 +101,16 @@ input {
     height: 5em;
     width: 30em;
   }
-  .question-title p,
+  .question-titlep {
+    font-size: 15px;
+  }
+  .question-titleh2 {
+    font-size: 1.25em;
+  }
   .answer {
     font-size: 15px;
   }
-  .quote,
-  .question-title h2 {
+  .quote {
     font-size: 1.25em;
   }
   .title p {
@@ -118,15 +122,17 @@ input {
     height: 4em;
     width: 25em;
   }
+  .question-titlep {
+    font-size: 15px;
+  }
+  .question-titleh2 {
+    font-size: 1em;
+  }
   .answer {
     height: 4em;
     width: 20em ;
   }
-  .question-title p {
-    font-size: 15px;
-  }
-  .quote,
-  .question-title h2 {
+  .quote {
     font-size: 1em;
   }
   .title p {
@@ -148,16 +154,18 @@ input {
     height: 4em;
     width: 20em;
   }
-  .question-title p,
-  .answer {
+  .question-titlep {
     font-size: 12px;
   }
-  .quote,
-  .question-title h2 {
+  .question-titleh2 {
     font-size: 15px;
   }
   .answer {
+    font-size: 12px;
     width: 20em;
+  }
+  .quote {
+    font-size: 15px;
   }
   .title p {
     font-size: 2.5em;
