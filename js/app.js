@@ -1,6 +1,9 @@
 $(document).ready(function() {
+	var score = 0;
+	var i = 1;
+	var quiz_model = require("./quiz-app/quiz_model");
 	var input = $("input[name='answer']:checked").val();
-
+	
 	var quiz = {
 		questions: [
 			{
@@ -30,86 +33,17 @@ $(document).ready(function() {
 			},
 		]
 	};
-
-	// Change Question 
-	// View Method 
-	function changeQuestion(quiz){
-		$(".question-title p").text(quiz);
-	}
-
-	// Change Answer
-	function changeAnswers(question) {
-		for (var i = 0; i < question.answers.length; i++) {
-			$(".answers").append('<div class="answer"><input type="radio" name="answer" value="'+question.answers[i]+'">' + question.answers[i] + '</div>');
-		}
-	}
-
-	// Submit Button
-	function submitButton(){
-		$(".quiz-form").append('<div class="submit"><button type="text">Submit</button></div>');
-	}
-
-	// Comparing User Answer To Correct Answer Index
-	function userAnswer() {
-		var input = $("input[name='answer']:checked").val();
-		for (var i = 0; i < quiz.questions.length; i++){
-			if (quiz.questions[i].answers.indexOf(input) === quiz.questions[i].correct) {
-				finalScore();
-			} else {
-			}
-		}
-	}
-
-	// Question and Answer Functions
-	// Controller?
-	function questionAnswer(i) {
-		var question = quiz.questions[i];
-		if (question !== undefined){
-			changeQuestion(question.title);
-			changeAnswers(question);
-			$(".new-game").hide();
-			$(".submit").show();
-		} else {
-			$(".question-title p").text("You got" + " " + score + " " + "out of 5 correct!" + " " + "Click New Game to play again!");
-			$(".question-title h2").hide();
-			$(".new-game").show();
-			$(".submit").hide();
-		}
-	}
-
-	// Tracking User's Correct Answers
-	var score = 0;
-	function finalScore() {
-		++score;
-	}
-
-	// Question Counter
-	// Controller?
-	var i = 1;
-	function questionCounter() {
-		$(".counter").text(++i);
-	}
-
 	// Submit Answers
 	$("form").submit(function(e) {
 		e.preventDefault();
-		userAnswer();
-		$(".quiz-form .answer").replaceWith(questionAnswer(i));
-		questionCounter();
+		quiz_model.userAnswer();
+		$(".quiz-form .answer").replaceWith(quiz_model.questionAnswer(i));
+		quiz_model.questionCounter();
 	});
-
-	// New Game
-	function newGame(){
-		$(".question-title h2").show();
-		$(".counter").text(i = 1);
-		questionAnswer(0);
-		score = 0;
-	}
 
 	$(".question-answer").on("click", ".new-game", function(){
-		newGame();
+		quiz_model.newGame();
 	});
-
-	questionAnswer(0);
-	submitButton();
+	quiz_model.questionAnswer(0);
+	quiz_model.submitButton();
 });
