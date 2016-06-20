@@ -42,11 +42,11 @@ body {
   border-color: #000000;
   border-style: solid;
 }
-.question-titlep {
+.question-title p {
   margin: 0 auto;
   font-size: 1.25em;
 }
-.question-titleh2 {
+.question-title h2 {
   margin: 0 auto;
 }
 .answer {
@@ -101,10 +101,10 @@ input {
     height: 5em;
     width: 30em;
   }
-  .question-titlep {
+  .question-title p {
     font-size: 15px;
   }
-  .question-titleh2 {
+  .question-title h2 {
     font-size: 1.25em;
   }
   .answer {
@@ -122,10 +122,10 @@ input {
     height: 4em;
     width: 25em;
   }
-  .question-titlep {
+  .question-title p {
     font-size: 15px;
   }
-  .question-titleh2 {
+  .question-title h2 {
     font-size: 1em;
   }
   .answer {
@@ -154,10 +154,10 @@ input {
     height: 4em;
     width: 20em;
   }
-  .question-titlep {
+  .question-title p {
     font-size: 12px;
   }
-  .question-titleh2 {
+  .question-title h2 {
     font-size: 15px;
   }
   .answer {
