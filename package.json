@@ -2,7 +2,7 @@
   "name": "seinfeld-quiz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "js/app.js",
   "scripts": {
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
@@ -37,7 +37,8 @@
   "dependencies": {
     "jquery": "^3.0.0",
     "less": "^2.7.1",
-    "requirejs": "^2.2.0"
+    "requirejs": "^2.2.0",
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
