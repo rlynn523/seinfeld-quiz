@@ -1,6 +1,5 @@
+import * as quiz_model from "../quiz-app/quiz_model";
 $(document).ready(function() {
-	var quiz_model = require("../quiz-app/quiz_model");
-	var input = $("input[name='answer']:checked").val();
 	// Submit Answers
 	$("form").submit(function(e) {
 		e.preventDefault();
