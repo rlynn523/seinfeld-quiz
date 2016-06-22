@@ -78,10 +78,8 @@
 	}
 	module.exports.finalScore = finalScore;
 	// Question Counter
-
 	var questionCounter = function() {
-		this.i + 1;
-		$(".counter").text(this.i += 1);
+		$(".counter").text(++this.i + 1);
 	}
 	module.exports.questionCounter = questionCounter;
 	// New Game
