@@ -53,9 +53,9 @@
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	$(document).ready(function () {
-		$(".title").fadeIn(2000);
-		$(".quote").fadeIn(3000);
-		$(".question-answer").fadeIn(4000);
+		// $(".title").fadeIn(1500);
+		$(".title, .quote, .question-answer").fadeIn(2000);
+		// $(".question-answer").fadeIn(3000);
 		// Submit Answers
 		$("form").submit(function (e) {
 			e.preventDefault();

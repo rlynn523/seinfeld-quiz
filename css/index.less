@@ -74,6 +74,10 @@ body {
 	padding: 18px 0;
 	border-color: @black;
 	border-style: solid;
+    &:hover{
+      transition: background-color 0.5s ease;
+      background-color: @yellow;
+    }
 }
 input {
 	margin: 0 2em;
@@ -92,6 +96,10 @@ input {
 }
 .submit:hover, .new-game:hover {
 	cursor: pointer;
+  transition: background-color 0.5s ease;
+  background-color: @red;
+  border-color: @yellow;
+	border-style: solid;
 	color: white;
 }
 .game-over {

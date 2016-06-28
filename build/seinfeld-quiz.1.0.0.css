@@ -70,6 +70,10 @@ body {
   border-color: #000000;
   border-style: solid;
 }
+.answer:hover {
+  transition: background-color 0.5s ease;
+  background-color: #FCD920;
+}
 input {
   margin: 0 2em;
 }
@@ -89,6 +93,10 @@ input {
 .submit:hover,
 .new-game:hover {
   cursor: pointer;
+  transition: background-color 0.5s ease;
+  background-color: #E30922;
+  border-color: #FCD920;
+  border-style: solid;
   color: white;
 }
 .game-over {
