@@ -13,21 +13,24 @@ html {
 @yellow: #FCD920;
 
 body {
-    background-color: @white;
+  background-color: @white;
 	background-repeat: no-repeat;
 	background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
 	background-size: 45%;
 	background-attachment: fixed;
 	font-family: @roboto;
 }
-.title p {
-	color: @red;
-	text-shadow: 2px 2px @yellow;
-	font-family: @roboto;
-	font-size: 4em;
-	margin-bottom: 0;
-	margin-top: 0.5em;
-	text-align: center;
+.title {
+  display: none;
+  p {
+  	color: @red;
+  	text-shadow: 2px 2px @yellow;
+  	font-family: @roboto;
+  	font-size: 4em;
+  	margin-bottom: 0;
+  	margin-top: 0.5em;
+  	text-align: center;
+  }
 }
 .quote {
 	color: @red;
@@ -35,10 +38,11 @@ body {
 	font-size: 1.5em;
 	margin: 0 auto;
 	text-align: center;
+  display: none;
 }
 .question-title {
-	height: 5em;
-	width: 35em;
+	height: 5%;
+	width: 45%;
 	margin: 3em auto;
 	border-radius: 10px;
 	background-color: @red;
@@ -55,9 +59,12 @@ body {
 		margin: 0 auto;
 	}
 }
+.question-answer{
+  display: none;
+}
 .answer {
-	height: 4em;
-	width: 30em;
+	height: 3%;
+	width: 35%;
 	margin: 2em auto;
 	border-radius: 10px;
 	background-color: @red;
@@ -102,8 +109,6 @@ input {
 /* Media Queries */
 @media only screen and (max-width: 1240px) {
 	.question-title {
-		height: 5em;
-		width: 30em;
 		p {
 			font-size: 15px;
 		}
@@ -113,7 +118,7 @@ input {
 	}
 	.answer {
 		font-size: 15px;
-	}	
+	}
 	.quote {
 		font-size: 1.25em;
 	}
@@ -123,18 +128,12 @@ input {
 }
 @media only screen and (max-width: 1050px) {
 	.question-title {
-		height: 4em;
-		width: 25em;
 		p {
 			font-size: 15px;
 		}
 		h2 {
 			font-size: 1em;
 		}
-	}
-	.answer {
-		height: 4em;
-		width: 20em ;
 	}
 	.quote {
 		font-size: 1em;
@@ -154,8 +153,6 @@ input {
 }
 @media only screen and (max-width: 870px) {
 	.question-title {
-		height: 4em;
-		width: 20em;
 		p {
 			font-size: 12px;
 		}
@@ -164,9 +161,8 @@ input {
 		}
 	}
 	.answer {
-		font-size: 12px;
-		width: 20em;
-	}	
+	  font-size: 12px;
+	}
 	.quote {
 		font-size: 15px;
 	}
@@ -178,4 +174,10 @@ input {
 	body {
 		background-image: none;
 	}
+  .question-title {
+    width: 65%;
+  }
+  .answer {
+    width: 55%;
+  }
 }

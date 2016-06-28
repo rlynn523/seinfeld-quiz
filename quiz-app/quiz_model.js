@@ -22,16 +22,31 @@
 				title: "What occupation does George like to pretend he has?",
 				answers: ["Marine Biologist", "Latex Salesman", "Architect", "Hand Model"],
 				correct: 2
-			},	
+			},
 			{
 				title:  "What was Kramer's fake doctor name?",
 				answers: ["Dr. Vandelay", "Dr. Van Nostrand", "Dr. Whatley", "Dr. Reston"],
 				correct: 1
 			},
+			{
+				title:  "What was Kramer's mother's name?",
+				answers: ["Babs", "Bonney", "Bunney", "Barb"],
+				correct: 0
+			},
+			{
+				title:  "What is George's ATM code?",
+				answers: ["Syrup", "Smore", "Bosco", "Oreos"],
+				correct: 2
+			},
+			{
+				title:  "What food did George introduce to Mr. Steinbrenner that he become obessesed with eating at every lunch?",
+				answers: ["Chili Dog", "General Tso's Chicken", "Stuffed Peppers", "Calzone"],
+				correct: 3
+			},
 		]
 	};
 
-	// Change Question 
+	// Change Question
 	export function changeQuestion(quiz) {
 		$(".question-title p").text(quiz);
 	}
@@ -61,7 +76,7 @@
 			$(".new-game").hide();
 			$(".submit").show();
 		} else {
-			$(".question-title p").text("You got" + " " +  score + " " + "out of 5 correct!" + " " + "Click New Game to play again!");
+			$(".question-title p").text("You got" + " " +  score + " " + "out of 8 correct!" + " " + "Click New Game to play again!");
 			$(".question-title h2").hide();
 			$(".new-game").show();
 			$(".submit").hide();

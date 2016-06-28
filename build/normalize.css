@@ -1,4 +1,3 @@
-@import "normalize.css";
 html {
   box-sizing: border-box;
 }
@@ -15,9 +14,6 @@ body {
   background-attachment: fixed;
   font-family: 'Roboto Slab', serif;
 }
-.title {
-  display: none;
-}
 .title p {
   color: #E30922;
   text-shadow: 2px 2px #FCD920;
@@ -33,11 +29,10 @@ body {
   font-size: 1.5em;
   margin: 0 auto;
   text-align: center;
-  display: none;
 }
 .question-title {
-  height: 5%;
-  width: 45%;
+  height: 5em;
+  width: 35em;
   margin: 3em auto;
   border-radius: 10px;
   background-color: #E30922;
@@ -54,12 +49,9 @@ body {
 .question-title h2 {
   margin: 0 auto;
 }
-.question-answer {
-  display: none;
-}
 .answer {
-  height: 3%;
-  width: 35%;
+  height: 4em;
+  width: 30em;
   margin: 2em auto;
   border-radius: 10px;
   background-color: #E30922;
@@ -105,6 +97,10 @@ input {
 }
 /* Media Queries */
 @media only screen and (max-width: 1240px) {
+  .question-title {
+    height: 5em;
+    width: 30em;
+  }
   .question-title p {
     font-size: 15px;
   }
@@ -122,11 +118,19 @@ input {
   }
 }
 @media only screen and (max-width: 1050px) {
+  .question-title {
+    height: 4em;
+    width: 25em;
+  }
   .question-title p {
     font-size: 15px;
   }
   .question-title h2 {
     font-size: 1em;
+  }
+  .answer {
+    height: 4em;
+    width: 20em ;
   }
   .quote {
     font-size: 1em;
@@ -146,6 +150,10 @@ input {
   }
 }
 @media only screen and (max-width: 870px) {
+  .question-title {
+    height: 4em;
+    width: 20em;
+  }
   .question-title p {
     font-size: 12px;
   }
@@ -154,6 +162,7 @@ input {
   }
   .answer {
     font-size: 12px;
+    width: 20em;
   }
   .quote {
     font-size: 15px;
@@ -166,11 +175,5 @@ input {
   body {
     background-image: none;
   }
-  .question-title {
-    width: 65%;
-  }
-  .answer {
-    width: 55%;
-  }
 }
-/*# sourceMappingURL=seinfeld-quiz.1.0.0.css.map */
+/*# sourceMappingURL=normalize.css.map */
