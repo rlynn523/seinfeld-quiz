@@ -24,7 +24,7 @@ body {
     display: none;
     p {
         color: @red;
-        text-shadow: 2px 2px @yellow;
+        text-shadow: 0.125em @yellow;
         font-family: @roboto;
         font-size: 4em;
         margin-bottom: 0;
@@ -34,7 +34,7 @@ body {
 }
 .quote {
     color: @red;
-    text-shadow: 2px 2px @yellow;
+    text-shadow: 0.125em @yellow;
     font-size: 1.5em;
     margin: 0 auto;
     text-align: center;
@@ -44,11 +44,11 @@ body {
     height: 5%;
     width: 45%;
     margin: 3em auto;
-    border-radius: 10px;
+    border-radius: 0.625em;
     background-color: @red;
     opacity: 0.9;
     text-align: center;
-    padding: 10px 0;
+    padding: 0.625em 0;
     border-color: @black;
     border-style: solid;
     p {
@@ -66,12 +66,12 @@ body {
     height: 3%;
     width: 35%;
     margin: 2em auto;
-    border-radius: 10px;
+    border-radius: 0.625em;
     background-color: @red;
     opacity: 0.9;
     font-size: 1em;
     text-align: left;
-    padding: 18px 0;
+    padding: 1.125em 0;
     border-color: @black;
     border-style: solid;
     &:hover{
@@ -89,8 +89,8 @@ input {
     margin: 2em auto;
     opacity: 0.9;
     text-align: center;
-    border-radius: 10px;
-    padding-top: 8px;
+    border-radius: 0.625em;
+    padding-top: 0.5em;
     border-color: @red;
     border-style: solid;
 }
@@ -105,8 +105,8 @@ input {
 .game-over {
     width: 33%;
     font-size: 1.25em;
-    padding: 50px;
-    border-radius: 10px;
+    padding: 3.125em;
+    border-radius: 0.625em;
     opacity: 0.9;
     background-color: @yellow;
     margin: 2em auto;
@@ -118,27 +118,24 @@ input {
 @media only screen and (max-width: 1240px) {
     .question-title {
         p {
-            font-size: 15px;
+            font-size: 0.875em;
         }
         h2 {
             font-size: 1.25em;
         }
-        .answer {
-            font-size: 15px;
-        }
-        .quote {
-            font-size: 1.25em;
-        }
-        .title p {
-            font-size: 3.5em;
-        }
+    }
+    .answer {
+        font-size: 0.875em;
+    }
+    .quote {
+        font-size: 1.25em;
+    }
+    .title p {
+        font-size: 3.5em;
     }
 }
 @media only screen and (max-width: 1050px) {
     .question-title {
-        p {
-            font-size: 15px;
-        }
         h2 {
             font-size: 1em;
         }
@@ -156,23 +153,23 @@ input {
     button[type=text] {
         height: 2em;
         width: 5em;
-        font-size: 12px;
+        font-size: 0.75em;
     }
 }
 @media only screen and (max-width: 870px) {
     .question-title {
         p {
-            font-size: 12px;
+            font-size: 0.75em;
         }
         h2 {
-            font-size: 15px;
+            font-size: 0.875em;
         }
     }
     .answer {
-        font-size: 12px;
+        font-size: 0.75em;
     }
     .quote {
-        font-size: 15px;
+        font-size: 0.875em;
     }
     .title p {
         font-size: 2.5em;
