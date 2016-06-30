@@ -123,6 +123,14 @@
 			title: "What food did George introduce to Mr. Steinbrenner that he become obessesed with eating at every lunch?",
 			answers: ["Chili Dog", "General Tso's Chicken", "Stuffed Peppers", "Calzone"],
 			correct: 3
+		}, {
+			title: "What is the name of the play that George made up in a meeting with NBC?",
+			answers: ["El Cocinero", "La Cocina", "El Cacahuete", "El Arquitecto"],
+			correct: 1
+		}, {
+			title: "What movie did Jerry promise to see with Elaine, but ended up seeing with George?",
+			answers: ["Rochelle Rochelle", "Chunnel", "Prognosis Negative", "Sack Lunch"],
+			correct: 2
 		}]
 	};
 	
@@ -156,7 +164,7 @@
 			$(".new-game").hide();
 			$(".submit").show();
 		} else {
-			$(".question-title p").text("You got" + " " + score + " " + "out of 8 correct!" + " " + "Click New Game to play again!");
+			$(".question-title p").text("You got" + " " + score + " " + "out of 10 correct!" + " " + "Click New Game to play again!");
 			$(".question-title h2").hide();
 			$(".new-game").show();
 			$(".submit").hide();
