@@ -1,3 +1,4 @@
+@import "normalize.css";
 html {
   	box-sizing: border-box;
 }
@@ -5,7 +6,7 @@ html {
  	box-sizing: inherit;
 }
 
-@roboto: 'Roboto Slab', serif;
+@roboto: "Roboto Slab", serif;
 @white: #FFFFFF;
 @black: #000000;
 @red: #E30922;
@@ -13,168 +14,175 @@ html {
 
 body {
     background-color: @white;
-	background-repeat: no-repeat;
-	background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
-	background-size: 45%;
-	background-attachment: fixed;
-	font-family: @roboto;
+    background-repeat: no-repeat;
+    background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
+    background-size: 45%;
+    background-attachment: fixed;
+    font-family: @roboto;
 }
-.title p {
-	color: @red;
-	text-shadow: 2px 2px @yellow;
-	font-family: @roboto;
-	font-size: 4em;
-	margin-bottom: 0;
-	margin-top: 0.5em;
-	text-align: center;
+.title {
+    display: none;
+    p {
+        color: @red;
+        text-shadow: 0.125em @yellow;
+        font-family: @roboto;
+        font-size: 4em;
+        margin-bottom: 0;
+        margin-top: 0.5em;
+        text-align: center;
+    }
 }
 .quote {
-	color: @red;
-	text-shadow: 2px 2px @yellow;
-	font-size: 1.5em;
-	margin: 0 auto;
-	text-align: center;
+    color: @red;
+    text-shadow: 0.125em @yellow;
+    font-size: 1.5em;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
 }
 .question-title {
-	height: 5em;
-	width: 35em;
-	margin: 3em auto;
-	border-radius: 10px;
-	background-color: @red;
-	opacity: 0.9;
-	text-align: center;
-	padding: 10px 0;
-	border-color: @black;
-	border-style: solid;
-	p {
-		margin: 0 auto;
-		font-size: 1.25em;
-	}
-	h2 {
-		margin: 0 auto;
-	}
+    height: 5%;
+    width: 45%;
+    margin: 3em auto;
+    border-radius: 0.625em;
+    background-color: @red;
+    opacity: 0.9;
+    text-align: center;
+    padding: 0.625em 0;
+    border-color: @black;
+    border-style: solid;
+    p {
+        margin: 0 auto;
+        font-size: 1.25em;
+    }
+    h2 {
+        margin: 0 auto;
+    }
+}
+.question-answer{
+    display: none;
 }
 .answer {
-	height: 4em;
-	width: 30em;
-	margin: 2em auto;
-	border-radius: 10px;
-	background-color: @red;
-	opacity: 0.9;
-	font-size: 1em;
-	text-align: left;
-	padding: 18px 0;
-	border-color: @black;
-	border-style: solid;
+    height: 3%;
+    width: 35%;
+    margin: 2em auto;
+    border-radius: 0.625em;
+    background-color: @red;
+    opacity: 0.9;
+    font-size: 1em;
+    text-align: left;
+    padding: 1.125em 0;
+    border-color: @black;
+    border-style: solid;
+    &:hover{
+        transition: background-color 0.5s ease;
+        background-color: @yellow;
+    }
 }
 input {
-	margin: 0 2em;
+    margin: 0 2em;
 }
 .submit, .new-game {
-	height: 3em;
-	width: 8em;
-	background-color: @yellow;
-	margin: 0 auto;
-	opacity: 0.9;
-	text-align: center;
-	border-radius: 10px;
-	padding-top: 8px;
-	border-color: @red;
-	border-style: solid;
+    height: 3em;
+    width: 8em;
+    background-color: @yellow;
+    margin: 2em auto;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 0.625em;
+    padding-top: 0.5em;
+    border-color: @red;
+    border-style: solid;
 }
 .submit:hover, .new-game:hover {
-	cursor: pointer;
-	color: white;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    background-color: @red;
+    border-color: @yellow;
+    border-style: solid;
+    color: white;
 }
 .game-over {
-	width: 33%;
-	font-size: 1.25em;
-	padding: 50px;
-	border-radius: 10px;
-	opacity: 0.9;
-	background-color: @yellow;
-	margin: 2em auto;
-	text-align: center;
-	border-color: @red;
-	border-style: solid;
+    width: 33%;
+    font-size: 1.25em;
+    padding: 3.125em;
+    border-radius: 0.625em;
+    opacity: 0.9;
+    background-color: @yellow;
+    margin: 2em auto;
+    text-align: center;
+    border-color: @red;
+    border-style: solid;
 }
 /* Media Queries */
 @media only screen and (max-width: 1240px) {
-	.question-title {
-		height: 5em;
-		width: 30em;
-		p {
-			font-size: 15px;
-		}
-		h2 {
-			font-size: 1.25em;
-		}
-	}
-	.answer {
-		font-size: 15px;
-	}	
-	.quote {
-		font-size: 1.25em;
-	}
-	.title p {
-		font-size: 3.5em;
-	}
+    .question-title {
+        p {
+            font-size: 0.875em;
+        }
+        h2 {
+            font-size: 1.25em;
+        }
+    }
+    .answer {
+        font-size: 0.875em;
+    }
+    .quote {
+        font-size: 1.25em;
+    }
+    .title p {
+        font-size: 3.5em;
+    }
 }
 @media only screen and (max-width: 1050px) {
-	.question-title {
-		height: 4em;
-		width: 25em;
-		p {
-			font-size: 15px;
-		}
-		h2 {
-			font-size: 1em;
-		}
-	}
-	.answer {
-		height: 4em;
-		width: 20em ;
-	}
-	.quote {
-		font-size: 1em;
-	}
-	.title p {
-		font-size: 2.5em;
-	}
-	.submit, .new-game {
-		height: 3em;
-		width: 7em;
-	}
-	button[type=text] {
-		height: 2em;
-		width: 5em;
-		font-size: 12px;
-	}
+    .question-title {
+        h2 {
+            font-size: 1em;
+        }
+    }
+    .quote {
+        font-size: 1em;
+    }
+    .title p {
+        font-size: 2.5em;
+    }
+    .submit, .new-game {
+        height: 3em;
+        width: 7em;
+    }
+    button[type=text] {
+        height: 2em;
+        width: 5em;
+        font-size: 0.75em;
+    }
 }
 @media only screen and (max-width: 870px) {
-	.question-title {
-		height: 4em;
-		width: 20em;
-		p {
-			font-size: 12px;
-		}
-		h2 {
-			font-size: 15px;
-		}
-	}
-	.answer {
-		font-size: 12px;
-		width: 20em;
-	}	
-	.quote {
-		font-size: 15px;
-	}
-	.title p {
-		font-size: 2.5em;
-	}
+    .question-title {
+        p {
+            font-size: 0.75em;
+        }
+        h2 {
+            font-size: 0.875em;
+        }
+    }
+    .answer {
+        font-size: 0.75em;
+    }
+    .quote {
+        font-size: 0.875em;
+    }
+    .title p {
+        font-size: 2.5em;
+    }
 }
 @media only screen and (max-width: 640px) {
-	body {
-		background-image: none;
-	}
+    body {
+        background-image: none;
+    }
+    .question-title {
+        width: 65%;
+    }
+    .answer {
+        width: 55%;
+    }
 }

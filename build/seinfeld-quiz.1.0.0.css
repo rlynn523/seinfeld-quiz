@@ -1,3 +1,4 @@
+@import "normalize.css";
 html {
   box-sizing: border-box;
 }
@@ -12,12 +13,15 @@ body {
   background-image: url("http://www.thatericalper.com/wp-content/uploads/2014/04/Jerryseinfeld.jpg");
   background-size: 45%;
   background-attachment: fixed;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
+}
+.title {
+  display: none;
 }
 .title p {
   color: #E30922;
-  text-shadow: 2px 2px #FCD920;
-  font-family: 'Roboto Slab', serif;
+  text-shadow: 0.125em #FCD920;
+  font-family: "Roboto Slab", serif;
   font-size: 4em;
   margin-bottom: 0;
   margin-top: 0.5em;
@@ -25,20 +29,21 @@ body {
 }
 .quote {
   color: #E30922;
-  text-shadow: 2px 2px #FCD920;
+  text-shadow: 0.125em #FCD920;
   font-size: 1.5em;
   margin: 0 auto;
   text-align: center;
+  display: none;
 }
 .question-title {
-  height: 5em;
-  width: 35em;
+  height: 5%;
+  width: 45%;
   margin: 3em auto;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #E30922;
   opacity: 0.9;
   text-align: center;
-  padding: 10px 0;
+  padding: 0.625em 0;
   border-color: #000000;
   border-style: solid;
 }
@@ -49,18 +54,25 @@ body {
 .question-title h2 {
   margin: 0 auto;
 }
+.question-answer {
+  display: none;
+}
 .answer {
-  height: 4em;
-  width: 30em;
+  height: 3%;
+  width: 35%;
   margin: 2em auto;
-  border-radius: 10px;
+  border-radius: 0.625em;
   background-color: #E30922;
   opacity: 0.9;
   font-size: 1em;
   text-align: left;
-  padding: 18px 0;
+  padding: 1.125em 0;
   border-color: #000000;
   border-style: solid;
+}
+.answer:hover {
+  transition: background-color 0.5s ease;
+  background-color: #FCD920;
 }
 input {
   margin: 0 2em;
@@ -70,24 +82,28 @@ input {
   height: 3em;
   width: 8em;
   background-color: #FCD920;
-  margin: 0 auto;
+  margin: 2em auto;
   opacity: 0.9;
   text-align: center;
-  border-radius: 10px;
-  padding-top: 8px;
+  border-radius: 0.625em;
+  padding-top: 0.5em;
   border-color: #E30922;
   border-style: solid;
 }
 .submit:hover,
 .new-game:hover {
   cursor: pointer;
+  transition: background-color 0.5s ease;
+  background-color: #E30922;
+  border-color: #FCD920;
+  border-style: solid;
   color: white;
 }
 .game-over {
   width: 33%;
   font-size: 1.25em;
-  padding: 50px;
-  border-radius: 10px;
+  padding: 3.125em;
+  border-radius: 0.625em;
   opacity: 0.9;
   background-color: #FCD920;
   margin: 2em auto;
@@ -97,18 +113,14 @@ input {
 }
 /* Media Queries */
 @media only screen and (max-width: 1240px) {
-  .question-title {
-    height: 5em;
-    width: 30em;
-  }
   .question-title p {
-    font-size: 15px;
+    font-size: 0.875em;
   }
   .question-title h2 {
     font-size: 1.25em;
   }
   .answer {
-    font-size: 15px;
+    font-size: 0.875em;
   }
   .quote {
     font-size: 1.25em;
@@ -118,19 +130,8 @@ input {
   }
 }
 @media only screen and (max-width: 1050px) {
-  .question-title {
-    height: 4em;
-    width: 25em;
-  }
-  .question-title p {
-    font-size: 15px;
-  }
   .question-title h2 {
     font-size: 1em;
-  }
-  .answer {
-    height: 4em;
-    width: 20em ;
   }
   .quote {
     font-size: 1em;
@@ -146,26 +147,21 @@ input {
   button[type=text] {
     height: 2em;
     width: 5em;
-    font-size: 12px;
+    font-size: 0.75em;
   }
 }
 @media only screen and (max-width: 870px) {
-  .question-title {
-    height: 4em;
-    width: 20em;
-  }
   .question-title p {
-    font-size: 12px;
+    font-size: 0.75em;
   }
   .question-title h2 {
-    font-size: 15px;
+    font-size: 0.875em;
   }
   .answer {
-    font-size: 12px;
-    width: 20em;
+    font-size: 0.75em;
   }
   .quote {
-    font-size: 15px;
+    font-size: 0.875em;
   }
   .title p {
     font-size: 2.5em;
@@ -174,6 +170,12 @@ input {
 @media only screen and (max-width: 640px) {
   body {
     background-image: none;
+  }
+  .question-title {
+    width: 65%;
+  }
+  .answer {
+    width: 55%;
   }
 }
 /*# sourceMappingURL=seinfeld-quiz.1.0.0.css.map */
